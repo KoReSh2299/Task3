@@ -11,12 +11,17 @@ namespace InternshipTask3
         private int[] _numbers = numbers;
         public int CountFaces { get => _numbers.Length; }
 
-        public int GetNumber(int faceNumber)
+        public int GetNumber(int faceIndex)
         {
-            if (faceNumber < 0 || faceNumber >= CountFaces)
-                throw new ArgumentOutOfRangeException($"The face number must be in the range of [0..{CountFaces - 1}]");
+            if (faceIndex < 0 || faceIndex >= CountFaces)
+                throw new Exception($"The face index must be in the range of [0..{CountFaces - 1}]");
 
-            return _numbers[faceNumber];
+            return _numbers[faceIndex];
+        }
+
+        public override string ToString()
+        {
+            return $"[{String.Join(",", _numbers)}]";
         }
     }
 }

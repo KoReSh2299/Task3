@@ -10,9 +10,9 @@ namespace InternshipTask3
 {
     public static class HMACGenerator
     {
-        public static string GenerateRandomKey(int length)
+        public static string GenerateRandomKey(int countBytes)
         {
-            byte[] key = new byte[length];
+            byte[] key = new byte[countBytes];
             using (var rng = RandomNumberGenerator.Create())
             {
                 rng.GetBytes(key);
